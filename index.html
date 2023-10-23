@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #app {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #note-menu {
+            width: 100%;
+            position: sticky;
+            left: 0px;
+            top: 0px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 32px;
+            z-index: 1;
+        }
+
+        #note-list {
+            position: relative;
+            width: 100%;
+            height: calc(100% - 32px);
+            background-color: beige;
+        }
+
+        #note-data-menu {
+            width: 100%;
+            position: sticky;
+            left: 0px;
+            top: 0px;
+            display: grid;
+            height: 32px;
+            z-index: 1;
+            grid-template-columns: 2fr 2fr 2fr 1fr;
+        }
+
+        #editbox-note-data {
+            width: 99.5%;
+            height: 95%;
+            font-size: 24px;
+            resize: none;
+            outline: none;
+            border-style: none;
+            caret-color: rgb(0, 0, 0)
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        <div id="app-left">
+            <div id="note-menu">
+                <button onclick="addNote()">添加</button>
+                <button onclick="removeNote()">移除</button>
+            </div>
+
+            <div id="note-list">
+            </div>
+        </div>
+
+
+        <div id="app-right">
+            <div id="note-data-menu">
+                <p id="editor-note-name">name</p>
+                <p id="editor-note-lateTime">lateTime</p>
+                <p id="editor-note-createTime">createTime</p>
+                <button onclick="saveNote()">保存</button>
+            </div>
+
+            <textarea id="editbox-note-data">
+
+            </textarea>
+        </div>
+
+    </div>
+
+    <script src="./dist/app.js"></script>
+
+</body>
+
+</html>
